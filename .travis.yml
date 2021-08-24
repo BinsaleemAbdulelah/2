@@ -1,1 +1,53 @@
+language: java
 
+sudo: false
+
+addons:
+  hosts:
+    - db
+
+services:
+  - docker
+
+install:
+  - docker build -t database db/.
+  - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 3306:3306 database
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+before_script:
+  - mvn clean
+
+jobs:
+  include:
+    - stage: unit tests
+      install: skip
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.abdulelah.binsaleem.AppTest
+    - stage: integration tests
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.abdulelah.binsaleem.AppIntegrationTest
+    - stage: GitHub Release
+      install: skip
+      jdk: oraclejdk11
+      script:
+      - echo "Deploying to GitHub Releases"
+      - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
+      before_deploy:
+        - git config --local user.name "BinsaleemAbdulelah"
+        - git config --local user.email "40503545@live.napier.ac.uk"
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
+        - git tag $TRAVIS_TAG
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        file: $TRAVIS_BUILD_DIR/target/seMethods.jar
+        skip_cleanup: true
+
+stages:
+  - unit tests
+  - integration tests
+  - name: GitHub Release
+    if: branch = master
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
