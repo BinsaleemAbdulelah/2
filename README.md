@@ -1,9 +1,9 @@
 # Software Engineering Methods
 
-- Master Build Status [![Build Status](https://www.travis-ci.com/BinsaleemAbdulelah/Project.svg?branch=master)](https://www.travis-ci.com/github/BinsaleemAbdulelah/Project)
-- License [![LICENSE](https://img.shields.io/github/license/BinsaleemAbdulelah/Project.svg?style=flat-square)](https://github.com/BinsaleemAbdulelah/Project/blob/master/LICENSE)
-- Release [![Releases](https://img.shields.io/github/release/BinsaleemAbdulelah/Project/all.svg?style=flat-square)](https://github.com/BinsaleemAbdulelah/Project/releases)
-- [![codecov](https://codecov.io/gh/BinsaleemAbdulelah/Project/branch/Appunittest/graph/badge.svg?token=18ea1216-03b3-4f86-b0a4-25a61759b9eb)](https://codecov.io/gh/BinsaleemAbdulelah/Project)
+- Master Build Status [![Build Status](https://www.travis-ci.com/BinsaleemAbdulelah/SET08803.svg?branch=master)](https://www.travis-ci.com/github/BinsaleemAbdulelah/SET08803)
+- License [![LICENSE](https://img.shields.io/github/license/BinsaleemAbdulelah/SET08803.svg?style=flat-square)](https://github.com/BinsaleemAbdulelah/SET08803/blob/master/LICENSE)
+- Release [![Releases](https://img.shields.io/github/release/BinsaleemAbdulelah/SET08803/all.svg?style=flat-square)](https://github.com/BinsaleemAbdulelah/SET08803/releases)
+- [![codecov](https://codecov.io/gh/BinsaleemAbdulelah/SET08803/branch/Appunittest/graph/badge.svg?token=18ea1216-03b3-4f86-b0a4-25a61759b9eb)](https://codecov.io/gh/BinsaleemAbdulelah/SET08803)
 
 # Requirements
 
